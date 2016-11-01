@@ -42,10 +42,11 @@
     </ul>
 
     <h3> Potential Solutions </h3>
-    <ul>
+    <ol>
         <li>Fixing all navigation url not ended with '/'. Though <code>Request.type & Request.destination</code> hasnt implementated yet, <code>Request.mode and its polyfill</code><a href="https://googlechrome.github.io/samples/service-worker/custom-offline-page/">as googlechrome.github.io/samples/service-worker/custom-offline-page/ showed</a> can be a workaround </li>
         <li>Is there any methods we can prevent parent SW from installing? Kinda overriding? It seems SW scope can not help in this scenario </li>
-    </ul>
+        <li>Waiting for browsers support Fetch API <code>cache: no-store</code> so web developers can bypass HTTP Caching provided by gh-pages or any CDN when needed and without any hacks. Should I concluded that Github-Pages' environment is super unfriendly with SW...sigh</li>
+    </ol>
 
 	<script type="text/javascript">
     if(navigator.serviceWorker){
