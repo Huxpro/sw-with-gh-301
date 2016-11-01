@@ -8,18 +8,25 @@
     </style>
 </head>
 <body>
-    <p>
-	This is a demo.
-    </p>
+    <h1> SW with gh-pages - Parent SW</h1>
     
     <a href="https://huangxuan.me/sw-with-gh-301">https://huangxuan.me/sw-with-gh-301</a>
     <a href="https://huangxuan.me/sw-with-gh-301/">https://huangxuan.me/sw-with-gh-301/</a>
     <a href="https://huangxuan.me/sw-with-gh-301?query">https://huangxuan.me/sw-with-gh-301?query</a>
-    <a href="https://github.com/Huxpro/sw-with-gh-301/blob/master/sw.js">The Service Worker Codes</a>
-    <a href="fakedURL/"> 404.html (online) or offline.html(offline) </a>
+    <a href="https://github.com/Huxpro/huxpro.github.io/blob/master/sw.js">The Service Worker Codes (located in <code>huxpro.github.io/blob/master/sw.js</code>)</a>
+    
+    <h3> In this DEMO. The SW is registered under <code>huangxuan.me</code></h3>
 
     <p>
-        When requesting <code>/sw-with-gh-301</code>, which should be redirected to <code>/sw-with-gh-301/</code> normally:
+        Visit <code>/sw-with-gh-301</code> Without SW:
+        <ol>
+            <li>Github Pages redirect <code>/sw-with-gh-301</code> to <code>/sw-with-gh-301/</code>
+            <li>Done</li>
+        </ol>
+    </p>
+
+    <p>
+        Visit <code>/sw-with-gh-301</code> With SW:
         <ol>
             <li>SW intercepts <code>https://huangxuan.me/sw-with-gh-301</code></li>
             <li>Replace with <code>https://huangxuan.me/sw-with-gh-301?${randomQuery}</code> (for caching-bust & revalidate)</li>
@@ -31,7 +38,7 @@
 	<script type="text/javascript">
     if(navigator.serviceWorker){
         navigator.serviceWorker
-            .register('./sw.js')
+            .register('/sw.js')
             .then((registration) => {console.log('Service Worker Registered. ', registration)})
             .catch((error) => {console.log('ServiceWorker registration failed: ', error)})
     	}
