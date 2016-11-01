@@ -30,7 +30,7 @@
         <ol>
             <li>SW intercepts <code>https://huangxuan.me/sw-with-gh-301</code></li>
             <li>Replace with <code>https://huangxuan.me/sw-with-gh-301?${randomQuery}</code> (for caching-bust & revalidate)</li>
-            <li>Github Pages not redirect it to <code>https://huangxuan.me/sw-with-gh-301/${randomQuery}</code>, it response with 404 instead 
+            <li>Github Pages wont redirect it to <code>https://huangxuan.me/sw-with-gh-301/${randomQuery}</code>, it response with 404 instead 
             <li>Response not ok, can not cache and nothing to display...</li>
         </ol>
     </p>
@@ -39,6 +39,12 @@
     <ul>
         <li><a href="https://huangxuan.me/sw-with-gh-301/">https://huangxuan.me/sw-with-gh-301/</a></li>
         <li><a href="https://huangxuan.me/sw-with-gh-301-own-sw/">https://huangxuan.me/sw-with-gh-301-own-sw/</a></li>
+    </ul>
+
+    <h3> Potential Solutions </h3>
+    <ul>
+        <li>Fixing all navigation url not ended with '/'. Though <code>Request.type & Request.destination</code> hasnt implementated yet, <code>Request.mode and its polyfill</code><a href="https://googlechrome.github.io/samples/service-worker/custom-offline-page/">as googlechrome.github.io/samples/service-worker/custom-offline-page/ showed</a> can be a workaround </li>
+        <li>Is there any methods we can prevent parent SW from installing? Kinda overriding? It seems SW scope can not help in this scenario </li>
     </ul>
 
 	<script type="text/javascript">
